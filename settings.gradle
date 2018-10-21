@@ -1,0 +1,6 @@
+rootProject.name = 'fake-group'
+include 'api'
+include 'service'
+include 'dto'
+include 'data'
+
