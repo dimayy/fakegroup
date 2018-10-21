@@ -8,8 +8,18 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
 repositories {
     mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.SR1'
+    }
 }
 
 dependencies {
@@ -18,6 +28,7 @@ dependencies {
 
     compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
     compile("org.springframework.data:spring-data-commons:${springBootVersion}")
+    compile("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 
     compile("io.springfox:springfox-swagger2:${swaggerVersion}")
     compile("io.springfox:springfox-swagger-ui:${swaggerVersion}")
