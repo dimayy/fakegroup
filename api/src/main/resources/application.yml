@@ -16,5 +16,5 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://localhost:3306/fakegroup
+    url: jdbc:mysql://localhost:3306/fakegroup?autoReconnect=true&useSSL=false
     type: com.zaxxer.hikari.HikariDataSource
